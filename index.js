@@ -42,7 +42,7 @@ console.log(segundoNome);
 let juntadao = segundoNome+primeiroNome;
 console.log(juntadao)
 
-// Constante
+// Constante é a que não se altera 
 const pi = 3.1416;
 let raio = 3;
 let comprimentoCircunferencia = 2*pi*raio;
