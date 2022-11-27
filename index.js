@@ -47,3 +47,4 @@ const pi = 3.1416;
 let raio = 3;
 let comprimentoCircunferencia = 2*pi*raio;
 console.log(comprimentoCircunferencia);
+
