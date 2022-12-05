@@ -29,3 +29,16 @@ estado = localização.substring(localização.length-2); //Metodo usado para se
 
 console.log(estado)
 
+const frase = "Minha cor favorita é: Azul";
+
+// Função para utilização de indice que pelo valor declarado entre () mostrando qual a posição da string declarada
+const indice = frase.indexOf(':');
+console.log(indice);
+
+// A const cor recebera as strings declaradas em frase iniciando pela string selecionada em indice + 2 posicões a frente
+const cor = frase.substring(indice+2)
+
+let texto = 'Basquete';
+// Utilizando o metodo replace que substitui as string declaradas em () e substituindo pelas novas string declaradas apos a virgula dentro do ()
+let novoTexto = texto.replace('bas', 'Ra')
+console.log(novoTexto)
