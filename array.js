@@ -18,7 +18,7 @@ console.log(produtos[2]); // exibir apenas a posição 2 do array
 console.log(typeof produtos);
 
 // Declaração de objetos dentro de um array
-let jogadores = [
+let jogadore = [
     // Valor da posição 0 a primeira posição;
     {
         nome: 'Ronaldinho', 
@@ -32,7 +32,7 @@ let jogadores = [
     },
 ];
 
-console.log(jogadores)
+console.log(jogadore)
 
 // SPLIT - DIVIDIR 
 
@@ -48,3 +48,112 @@ console.log(emailArray);
 const palavraChave = 'cinema, futebol, televisao, viagem, boliche'; 
 const hobies = palavraChave.split(',');
 console.log(hobies[3]);
+
+//PUSH - ADICIONAR elemento no final do array
+
+const cidades = [];
+console.log(cidades)
+
+// Adicionando valor a uma posição do array
+cidades.push('Rio', 'Brasília');
+console.log(cidades)
+
+// É possivel adicionar mais de uma vez valores a um array e ambos valores adicionados serão exibidos
+cidades.push('Cuiabá', 'São Paulo'); // Adicionado no final
+console.log(cidades)
+
+//UNSHIFT - ADICIONAR NO COMEÇO
+
+cidades.unshift('Campinas', 'Fortaleza') // Adicionado no inicio do array ocupando a posição 0
+console.log(cidades)
+
+// POP - REMOVER O ULTIMO ELEMENTO - RETORNA O ELEMENTO REMOVIDO
+
+let cidadeRemovida = cidades.pop();
+console.log(cidadeRemovida) // Retorna a cidade da ultima posição do array 'São Paulo
+
+// SHIFT - REMOVE O PRIMEIRO ELEMENTO - RETORNA O ELEMENTO REMOVIDO
+
+cidadeRemovida = cidades.shift();
+console.log(cidadeRemovida) // Retorna a cidade da primeira posição do array 'Campinas' 
+
+// SPLICE - REMOCE 1 OU MAIS ITENS - UTILIZANDO INDICE
+
+const indice = cidades.indexOf('Rio'); // Para indicar o indice de posicçao de array da palavra entre ()
+console.log(indice);
+
+cidades.splice(indice,1); // Removendo o array da posição 1
+
+console.log(cidades);
+
+// CONCAT - CONCATENAÇÃO 
+
+const cidadeInterior = ['Araraquara', 'Araras', 'Limeira']
+const regioesMetropolitanas = ['Campinas', 'São Paulo']
+
+// Para concatenar dois Arrays usando o metoto .concat e atribuindo = a um Array
+ const cidadesInterioreMetropolitana = cidadeInterior.concat(regioesMetropolitanas)
+
+ console.log(cidadesInterioreMetropolitana)
+
+ // ARRAY.FROM
+// Para separar em array o valor dentro de ()
+ const x = Array.from('ABNT');
+
+ console.log(x)
+
+ // INCLUDES 
+
+ // Para verificar se o valor inserido dentro de () pertence a esse Array sendo emitido os valores TRUE OU FALSE 
+ console.log(cidadeInterior.includes('Limeira')) // TRUE
+
+ console.log(cidadeInterior.includes('Rio')) // FALSE
+
+ // ITERAR - PERCORRER 
+
+ const jogadores = [
+     // Vetor de objetos
+     {
+         nome: 'Ronaldinho', 
+         posicao: 'Atacante'
+     }, 
+ 
+     {
+         nome: 'Marquinhos',
+         posicao: 'Zaqueiro'
+     },
+
+     {
+        nome: 'Casemiro',
+        posicao: 'Volante'
+     },
+
+     {
+        nome: 'Paqueta',
+        posicao: 'Volante'
+     }
+ ];
+
+ function obtemNomeJogador(j) {
+    return j.nome;
+ }
+
+ let nomeJogadores = jogadores.map(obtemNomeJogador);
+ console.log(nomeJogadores)
+
+ // 
+ function obtemVolante(jogadores) {
+    return jogadores.posicao === 'Volante'
+ }
+
+ const volantes = jogadores.filter(obtemVolante)
+
+ console.log(volantes);
+
+ // FOREACH - PARA CADA 
+
+ function exibirNomeJogador(jogador){
+    console.log(jogador.nome);
+ }
+
+ jogadores.forEach(exibirNomeJogador)
