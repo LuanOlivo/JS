@@ -6,7 +6,6 @@ class Livro {
 
 }
 
-
 class Equipamento{
 
 }
