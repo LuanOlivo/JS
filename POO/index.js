@@ -57,3 +57,37 @@ const disc1 = new Disciplina(123, 'Matematica');
 // console.log(disc1.nome) // exibição apenas do atributo nome deste objeto
 
 // ATRIBUIÇÃO DE OBJETO EM  JS
+
+
+// ATRIBUTO ESTATICO EM JS
+class Musica{
+    static formato = 'mp3'; // static é um atributo statico que é utilizado apenas na classe e não disponivel ao(s) objeto(s) dessa classe
+    titulo;
+    duração;
+    constructor(titulo,duração){
+        this.titulo = titulo;
+        this.duração = duração;
+    }
+}
+
+const musica1 = new Musica('De quem é a culpa', 190)
+console.log(musica1.formato) // undefied pq não é possivel acessar o atributo static
+
+class Produtoo{
+    static GRANDE = 10;
+    static MEDIA = 5;
+    static PEQUENO = 1;
+    codigo;
+    titulo;
+    valor;
+    tamanho;
+    constructor(codigo, titulo, valor, tamanho){
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.valor = valor;
+        this.tamanho = tamanho;
+    }
+}
+
+const p1 = new Produtoo(345, 'Meu produto', 54,Produtoo.GRANDE);// atribuindo o valor do atributo static como argumento no objeto criado
+console.log(p1)
