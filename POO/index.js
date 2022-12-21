@@ -91,3 +91,5 @@ class Produtoo{
 
 const p1 = new Produtoo(345, 'Meu produto', 54,Produtoo.GRANDE);// atribuindo o valor do atributo static como argumento no objeto criado
 console.log(p1)
+
+// DECLARAÇÃO DE METODOS EM UMA CLASS
