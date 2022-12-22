@@ -71,7 +71,9 @@ class Musica{
 }
 
 const musica1 = new Musica('De quem é a culpa', 190)
-console.log(musica1.formato) // undefied pq não é possivel acessar o atributo static
+
+// undefied pq não é possivel acessar o atributo static
+// console.log(musica1.formato) 
 
 class Produtoo{
     static GRANDE = 10;
@@ -90,6 +92,78 @@ class Produtoo{
 }
 
 const p1 = new Produtoo(345, 'Meu produto', 54,Produtoo.GRANDE);// atribuindo o valor do atributo static como argumento no objeto criado
-console.log(p1)
+// console.log(p1)
 
 // DECLARAÇÃO DE METODOS EM UMA CLASS
+
+// metodo é uma função declarada em uma classe
+
+class Protudo1 {
+    descricao;
+    largura;
+    altura;
+    profundidade;
+    valor;
+    // metodo construtor -- funao constructor--
+    constructor (descricao, largura, altura, profundidade, valor){
+        this.descricao = descricao;
+        this.largura = largura;
+        this.altura = altura;
+        this.profundidade = profundidade;
+        this.valor = valor;
+    }
+
+    // metodo --função -- 
+    volumeProduto(){
+        return this.largura * this.altura * this.profundidade;
+    }
+
+    parcelaProduto(parcelas){
+        return this.valor / parcelas;
+    }
+
+    
+}
+
+const prod1 = new Protudo1('Meu produto',10,3,2, 80);
+
+ // uso do metodo pelo objeto
+//console.log(prod1.volumeProduto());
+
+// uso do metodo com fornecimento de argumento
+// console.log(prod1.parcelaProduto(2))
+
+// METODO ESTATICO EM JS  
+
+class Musica2 {
+    // atributos
+    #titulo;
+    #duracao;
+
+    // metodo constructor
+    constructor(titulo, duracao){
+        this.#titulo = titulo;
+        this.#duracao = duracao;
+    }
+
+    // metodo static
+    static converteSegundoEmMinuto(duracao){
+        const min = Math.floor(duracao / 60);
+        let segundo = duracao % 60;
+        if (segundo < 10 && segundo > 0){
+            segundo = `0${duracao % 60}`;
+        } else if (segundo < 10){
+            segundo = '00;'
+        }
+        return `${min}:${segundo}`;
+    }
+
+    getDuracao(){
+        return this.#duracao;
+    }
+}
+
+const Musica3 = new Musica2('Minha musica', 190);
+// console.log(Musica3.converteSegundoEmMinuto(Musica3.getDuracao())) // não possivel utilizar pq o metodo é static 
+
+console.log(Musica2.converteSegundoEmMinuto(Musica3.getDuracao())); // maneira de acessar um metodo static
