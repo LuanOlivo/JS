@@ -1,18 +1,4 @@
-//
-class CupomDesconto {
-    #desconto1 = 10;
-    #desconto2 = 20;
-    constructor(){}// metodo constructor vazio
-    getDesconto(){
-        if (gastos >= 1000 && gastos <= 3000){
-            console.log(`Você tem direito a ${this.#desconto1}% de desconto`)
-        } else if (gastos > 3000){
-            console.log(`Você tem direito a ${this.#desconto2}% de desconto`)
-        } else {
-            console.log(`Infelizmente, você não tem descontos no momento`)
-        }
-    }
-}
+import {CupomDesconto} from './cupomdesconto.js';
 
 class Cliente {
     #nome;
